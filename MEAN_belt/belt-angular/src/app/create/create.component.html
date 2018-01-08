@@ -1,0 +1,14 @@
+<a [routerLink]="['/dashboard']">Cancel</a> <br>
+<form (submit)=submitPoll($event)>
+  <label for="question">Question:</label> <input type="text" name="question" [(ngModel)]="newPoll.question" required #question="ngModel" minlength=8> <br>
+  <p class="error" *ngIf="question.errors">*This field cannot be empty & must be at least 8 characters</p> <br>
+  <label for="option1">Option 1: </label> <input type="text" name="option1" [(ngModel)]="newPoll.option[0]" required #option1="ngModel" minlength='3'> <br>
+  <p class="error" *ngIf="option1.errors">*This field cannot be empty & must be at least 3 characters</p> <br>
+  <label for="option2">Option 2: </label> <input type="text" name="option2" [(ngModel)]="newPoll.option[1]" required #option2="ngModel" minlength='3'> <br>
+  <p class="error" *ngIf="option2.errors">*This field cannot be empty & must be at least 3 characters</p> <br>
+  <label for="option3">Option 3:</label> <input type="text" name="option3" [(ngModel)]="newPoll.option[2]" required #option3="ngModel" minlength='3'><br>
+  <p class="error" *ngIf="option3.errors">*This field cannot be empty & must be at least 3 characters</p> <br>
+  <label for="option4">Option 4:</label> <input type="text" name="option4" [(ngModel)]="newPoll.option[3]" required #option4="ngModel" minlength='3'><br>
+  <p class="error" *ngIf="option4.errors">*This field cannot be empty & must be at least 3 characters</p> <br>
+  <input *ngIf="!question.errors && !option1.errors && !option2.errors && !option3.errors && !option4.errors" class="submit" type="submit" name="" value="Create Poll">
+</form>

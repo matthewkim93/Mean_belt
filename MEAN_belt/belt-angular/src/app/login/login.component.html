@@ -1,0 +1,5 @@
+<form (submit)=login($event)>
+  <label for="name">Name: </label> <input [(ngModel)]="name" type="text" name="name" required #namefield="ngModel">
+  <input class="submit" type="submit" value="Login">
+  <p class="error" *ngIf="namefield.errors">*This field is required</p>
+</form>
