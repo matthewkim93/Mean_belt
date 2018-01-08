@@ -7,7 +7,7 @@ const cors = require('cors');
 app.use(cors());
 
 mongoose.connect('mongodb://localhost/mean_belt');
-mongoose.connection.on('connexted', () => console.log('Connected to MongoDB'));
+mongoose.connection.on('connected', () => console.log('Connected to MongoDB'));
 mongoose.Promise = global.Promise;
 
 app.use(express.static(__dirname + '/belt-angular/dist'))
